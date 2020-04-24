@@ -1,0 +1,2 @@
+
+The simple todo list created in branch `feature-basic-list-of-todos` is a good start but right now the list of the to-do is not actually scrollable. In smaller screens we can see only partial todos. In this branch we will be fixing that issue with the help of another important `React Native` component - `ScrollableView`. At this point to make code more readable, I am going to move the logic of showing todo list own screen named - `LandingScreen`. 
