@@ -37,11 +37,6 @@ const LandingScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Button
-        onPress={handleCreateNewButtonClick}
-        title='Create New'
-        color='green'
-      />
       <TodoList
         onToggleCompeleteStatus={handleToggleMarkComplete}
         todos={todos}
