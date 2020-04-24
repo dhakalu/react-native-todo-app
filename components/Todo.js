@@ -1,15 +1,16 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Todo = (props) => {
   const {
-    todo = {}
+    todo = {},
+    onToggleCompeleteStatus = () => false
   } = props
 
   return (
-    <View style={styles.todo}>
-      <Text key={todo.id}> {todo.title}</Text>
-    </View>
+    <TouchableOpacity style={styles.todo} onLongPress={() => onToggleCompeleteStatus(todo.id)}>
+      <Text key={todo.id} style={{ textDecorationLine: todo.done ? 'line-through' : 'none' }}> {todo.title}</Text>
+    </TouchableOpacity>
   )
 }
 

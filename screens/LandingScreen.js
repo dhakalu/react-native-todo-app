@@ -3,6 +3,7 @@ import { Alert, StyleSheet, View, Button, Modal } from 'react-native'
 import TodoList from '../components/TodoList'
 import { mockedToDos } from '../data-mockup/todo'
 import CreateNewTodoFormScreen from './CreateNewTodoFormScreen'
+import _ from 'lodash'
 
 const LandingScreen = () => {
   const [todos, setTodos] = useState(mockedToDos)
@@ -23,6 +24,17 @@ const LandingScreen = () => {
     setCreateModalOpen(true)
   }
 
+  const handleToggleMarkComplete = (id) => {
+    const currentTodoList = [...todos]
+    const index = _.findIndex(currentTodoList, { id: id })
+    const todoToUpdate = currentTodoList[index]
+    currentTodoList[index] = {
+      ...todoToUpdate,
+      done: !todoToUpdate.done
+    }
+    setTodos(currentTodoList)
+  }
+
   return (
     <View style={styles.container}>
       <Button
@@ -30,7 +42,10 @@ const LandingScreen = () => {
         title='Create New'
         color='green'
       />
-      <TodoList todos={todos} />
+      <TodoList
+        onToggleCompeleteStatus={handleToggleMarkComplete}
+        todos={todos}
+      />
       {
         isCreateModalOpen && (
           <Modal
