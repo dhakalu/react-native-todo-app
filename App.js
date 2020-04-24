@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
-
-import { mockedToDos } from './data-mockup/todo'
 
 import Header from './components/Header'
 import LandingScreen from './screens/LandingScreen'
