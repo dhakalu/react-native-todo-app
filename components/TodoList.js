@@ -4,7 +4,8 @@ import Todo from './Todo'
 
 const TodoList = (props) => {
   const {
-    todos = []
+    todos = [],
+    onToggleCompeleteStatus = () => false
   } = props
 
   return (
@@ -12,7 +13,12 @@ const TodoList = (props) => {
       <View>
         {
           todos.map(x => {
-            return <Todo key={x.id} todo={x} />
+            return (
+              <Todo
+                onToggleCompeleteStatus={onToggleCompeleteStatus}
+                key={x.id} todo={x}
+              />
+            )
           })
         }
       </View>
