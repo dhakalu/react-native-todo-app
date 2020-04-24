@@ -5,8 +5,8 @@ I created this project to learn the basics of react native and I will be describ
 
 
 ## About the application
-    
-    In this application, I will be creating a simple todo application. 
+
+In this project, I will be creating a simple todo application. I have created branch for each of the features. As I learn more, I will add more features to test the knowledge that I have gathered. There is corresponding Markdown page that explains the things that I did in that particular branch and my progress through it.
 
 
 ## Setting up the environmet
