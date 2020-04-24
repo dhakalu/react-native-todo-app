@@ -1,18 +1,19 @@
 # React Native Basics - My Journey of React Native
-This project shows the basics of [React Native](https://reactnative.dev/), a framework that lets us create applications which can run across multiple platforms. To learn more about what React Native is, why its useful, and more you can checkout [this link](https://todo.update.this.com).
+
+This project shows the basics of React Native, a framework that lets us create applications which can run across multiple platforms. More about what React Native can be found [here](https://reactnative.dev/). [this link](https://todo.update.this.com).
 
 I created this project to learn the basics of react native and I will be describing each and every steps of what I learned as I learn new things. I have been working on ReactJS for about a year now but this is my very first react native project.
-
 
 ## About the application
 
 In this project, I will be creating a simple todo application. I have created branch for each of the features. As I learn more, I will add more features to test the knowledge that I have gathered. There is corresponding Markdown page that explains the things that I did in that particular branch and my progress through it.
 
-
 ## Setting up the environmet
-1. Install Node
+
+This project needs `nodejs` to start/run. NodeJs can be downloaded from [here](https://nodejs.org/en/download/). Node automatically installs `npm` its [default package manager](https://docs.npmjs.com/).
 
 ## [Expo](https://expo.io/learn)
+
 To install expo, we will use the command below. `-g` is used to specify that the module installed is a global modue. This allows us to ues `expo` from terminal/command prompt as a command.
 ```bash
 npm i -g expo
