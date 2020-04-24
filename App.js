@@ -1,26 +1,16 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 import { mockedToDos } from './data-mockup/todo'
 
 import Header from './components/Header'
+import LandingScreen from './screens/LandingScreen'
 
 const App = () => {
-  const [todos, setTodos] = useState(mockedToDos)
-
   return (
     <View style={styles.container}>
       <Header />
-      {
-        todos.map(x => {
-          return <Text
-            style={styles.todo}
-            key={x.id}
-                 >
-            {x.title}
-          </Text>
-        })
-      }
+      <LandingScreen />
     </View>
   )
 }

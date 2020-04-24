@@ -1,7 +1,7 @@
 export const mockedToDos = [
   {
     id: 1,
-    title: 'Learn React Basics'
+    title: 'Learn React Basics - 1'
   },
   {
     id: 2,
@@ -54,5 +54,21 @@ export const mockedToDos = [
   {
     id: 14,
     title: 'Learn NodeJS Advanced 9'
+  },
+  {
+    id: 15,
+    title: 'Learn NodeJS Advanced 10'
+  },
+  {
+    id: 16,
+    title: 'Learn NodeJS Advanced 11'
+  },
+  {
+    id: 17,
+    title: 'Learn NodeJS Advanced 12'
+  },
+  {
+    id: 18,
+    title: 'Learn NodeJS Advanced 13'
   }
 ]
