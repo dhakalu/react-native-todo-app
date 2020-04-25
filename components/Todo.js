@@ -6,11 +6,13 @@ import { CenteredView } from './CenteredView'
 const Todo = (props) => {
   const {
     todo = {},
-    onToggleCompeleteStatus = () => false
+    onToggleCompeleteStatus = () => false,
+    onDelete = () => false
   } = props
 
   const {
-    done = false
+    done = false,
+    id = ''
   } = todo
 
   const getIcon = () => {
@@ -23,9 +25,9 @@ const Todo = (props) => {
   }
 
   return (
-    <TouchableOpacity onLongPress={() => onToggleCompeleteStatus(todo.id)}>
+    <TouchableOpacity onLongPress={() => onToggleCompeleteStatus(id)}>
       <View style={styles.todo}>
-        <View>
+        <View style={styles.checkBoxIcon}>
           {getIcon()}
         </View>
         <View style={styles.todoTitle}>
@@ -36,8 +38,12 @@ const Todo = (props) => {
             {todo.title}
           </Text>
         </View>
+        <TouchableOpacity onPress={() => onDelete(id)}>
+          <View style={styles.deleteIcon}>
+            {<MaterialCommunityIcons name='close' size={12} color='red' />}
+          </View>
+        </TouchableOpacity>
       </View>
-
     </TouchableOpacity>
   )
 }
@@ -52,6 +58,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   todoTitle: {
-    marginLeft: 10
+    marginLeft: 10,
+    flex: 10
+  },
+  checkBoxIcon: {
+
+  },
+  deleteIcon: {
+    alignSelf: 'center'
   }
 })

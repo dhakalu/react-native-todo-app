@@ -24,6 +24,10 @@ const LandingScreen = () => {
     setCreateModalOpen(true)
   }
 
+  const handleDeleteTodo = (id) => {
+    setTodos(todos.filter(x => x.id !== id))
+  }
+
   const handleToggleMarkComplete = (id) => {
     const currentTodoList = [...todos]
     const index = _.findIndex(currentTodoList, { id: id })
@@ -39,6 +43,7 @@ const LandingScreen = () => {
     <View style={styles.container}>
       <Button title="Create New" onPress={handleCreateNewButtonClick} />
       <TodoList
+        onDelete={handleDeleteTodo}
         onToggleCompeleteStatus={handleToggleMarkComplete}
         todos={todos}
       />
