@@ -29,7 +29,7 @@ const CreateNewTodoFormScreen = (props) => {
       <View style={styles.buttonGroup}>
         <Button title='Create' onPress={handleCreate} />
         <View style={styles.cancelButton}>
-          <Button title='Cancel' color='red' onPress={onCancel} />
+          <Button title='Cancel' color='red' backgroundColor={'green'} onPress={onCancel} />
         </View>
       </View>
     </View>
@@ -41,19 +41,23 @@ export default CreateNewTodoFormScreen
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    flex: 1
+    flex: 1,
+    marginTop: 20
   },
   textInput: {
     padding: 10,
     marginVertical: 3,
+    height: 54,
+    borderRadius: 26,
+    backgroundColor: '#fff',
     marginHorizontal: 10,
     elevation: 1
   },
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10
   },
   cancelButton: {
     marginLeft: 10

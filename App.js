@@ -1,23 +1,24 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import LandingScreen from './screens/LandingScreen'
+import HabitsMainScreen from './screens/HabitsMainScreen'
+import SettingsMainScreen from './screens/SettingsMainScreen'
 import { Ionicons } from '@expo/vector-icons'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
-import CreateNewTodoFormScreen from './screens/CreateNewTodoFormScreen'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
-const HOME_TAB_NAME = 'Home'
-const DONE_TAB = 'Done'
-const CREATE_TAB_NAME = 'Create'
+const HOME_TAB_NAME = 'Todos'
+const OTHERS_TAB = 'Settings'
+const HABITS_TAB_NAME = 'Habits'
 
 const tabIconMap = {
-  [HOME_TAB_NAME]: 'md-home',
-  [CREATE_TAB_NAME]: 'md-create',
-  [DONE_TAB]: 'md-checkbox-outline'
+  [HOME_TAB_NAME]: 'md-checkbox',
+  [HABITS_TAB_NAME]: 'md-refresh-circle',
+  [OTHERS_TAB]: 'md-menu'
 }
 
 const getScreenOptions = ({ route }) => ({
@@ -50,10 +51,10 @@ const Home = () => {
       <Tab.Screen
         name={HOME_TAB_NAME}
         component={LandingScreen}
-        options={tabScreenOptions.Home}
+        options={{ title: 'Todo'}}
       />
-      <Tab.Screen name={CREATE_TAB_NAME} component={CreateNewTodoFormScreen} />
-      <Tab.Screen name={DONE_TAB} component={CreateNewTodoFormScreen} />
+      <Tab.Screen name={HABITS_TAB_NAME} component={HabitsMainScreen} />
+      <Tab.Screen name={OTHERS_TAB} component={SettingsMainScreen} />
     </Tab.Navigator>
   )
 }
