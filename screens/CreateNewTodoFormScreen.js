@@ -1,7 +1,13 @@
-import { View, TextInput, StyleSheet, Button } from 'react-native'
+import { View, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { mockedActions } from '../data-mockup/actions'
 import SuggestedActions from '../components/SuggestedActions'
+import { MaterialIcons } from '@expo/vector-icons'
+
+import DeadlinePicker from '../components/DeadlinePicker'
+import { colors } from '../constants/Color'
+
+// import DateTimePicker from '@react-native-community/datetimepicker';
 
 const CreateNewTodoFormScreen = (props) => {
   const {
@@ -9,16 +15,22 @@ const CreateNewTodoFormScreen = (props) => {
     onCancel = () => false
   } = props
 
-  const [titile, setTitle] = useState('')
+  const [title, setTitle] = useState('')
+  const [deadline, setDeadline] = useState(undefined)
+  const [isPickingDeadline, setPickingDeadline] = useState(false)
 
-  const inputRef = React.createRef();
+  const inputRef = React.createRef()
 
   const handleTextChange = (text) => {
     setTitle(text)
   }
 
   const handleCreate = () => {
-    onAdd(titile)
+    onAdd({
+      id: Math.random().toString(),
+      title,
+      dueOn: deadline
+    })
     onCancel()
   }
 
@@ -27,22 +39,36 @@ const CreateNewTodoFormScreen = (props) => {
     inputRef.current.focus()
   }
 
+  const handleDeadlineChange = (newDeadline) => {
+    setPickingDeadline(false)
+    setDeadline(newDeadline)
+  }
+
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder='Enter the name of your todo here'
-        style={styles.textInput}
-        value={titile}
-        ref={inputRef}
-        onChangeText={handleTextChange}
-      />
+      <View style={styles.addForm}>
+        <TextInput
+          placeholder='Enter the name of your todo here'
+          style={styles.textInput}
+          value={title}
+          ref={inputRef}
+          onChangeText={handleTextChange}
+        />
+        <TouchableOpacity onPress={() => setPickingDeadline(true)}>
+          <MaterialIcons name='date-range' size={24} color={colors.primary} />
+        </TouchableOpacity>
+      </View>
       <SuggestedActions
         onSelectAction={hadleActionSelection}
-        filterText={titile}
+        filterText={title}
         actions={mockedActions}
       />
+      <DeadlinePicker
+        onChange={handleDeadlineChange}
+        isOpen={isPickingDeadline}
+      />
       <View style={styles.buttonGroup}>
-        <View>
+        <View style={styles.buttonWrapper}>
           <Button title='Create' onPress={handleCreate} />
         </View>
         <View style={styles.cancelButton}>
@@ -62,21 +88,35 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   textInput: {
-    padding: 10,
+    flex: 1,
     marginVertical: 3,
-    height: 54,
-    borderRadius: 26,
+    height: 24,
     backgroundColor: '#fff',
-    marginHorizontal: 10,
-    elevation: 1
+    marginHorizontal: 10
   },
   buttonGroup: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    marginTop: 10
+    marginTop: 10,
+    marginHorizontal: 50,
+    marginBottom: 50
+  },
+  buttonWrapper: {
+    flex: 1
   },
   cancelButton: {
+    flex: 1,
     marginLeft: 10
+  },
+  addForm: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 26,
+    elevation: 2,
+    padding: 10,
+    marginHorizontal: 5
   }
 })
