@@ -1,5 +1,9 @@
 # React Native Basics - My Journey of React Native
 
+![follows standard][standard]
+
+[standard]: https://img.shields.io/badge/code_style-standard-brightgreen.svg "Standard JS"
+
 This project shows the basics of React Native, a framework that lets us create applications which can run across multiple platforms. More about what React Native can be found [here](https://reactnative.dev/). [this link](https://todo.update.this.com).
 
 I created this project to learn the basics of react native and I will be describing each and every steps of what I learned as I learn new things. I have been working on ReactJS for about a year now but this is my very first react native project.
