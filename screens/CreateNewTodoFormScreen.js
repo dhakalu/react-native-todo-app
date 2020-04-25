@@ -29,7 +29,7 @@ const CreateNewTodoFormScreen = (props) => {
       <View style={styles.buttonGroup}>
         <Button title='Create' onPress={handleCreate} />
         <View style={styles.cancelButton}>
-          <Button title='Cancel' color='red' backgroundColor={'green'} onPress={onCancel} />
+          <Button title='Cancel' color='red' backgroundColor='green' onPress={onCancel} />
         </View>
       </View>
     </View>

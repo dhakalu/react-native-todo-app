@@ -35,13 +35,6 @@ const tabBarOptions = {
   inactiveTintColor: 'gray'
 }
 
-const tabScreenOptions = {
-  Home: {
-    title: 'Home'
-    // headerTitle: () => <Text>ToDO</Text>
-  }
-}
-
 const Home = () => {
   return (
     <Tab.Navigator
@@ -51,7 +44,7 @@ const Home = () => {
       <Tab.Screen
         name={HOME_TAB_NAME}
         component={LandingScreen}
-        options={{ title: 'Todo'}}
+        options={{ title: 'Todo' }}
       />
       <Tab.Screen name={HABITS_TAB_NAME} component={HabitsMainScreen} />
       <Tab.Screen name={OTHERS_TAB} component={SettingsMainScreen} />

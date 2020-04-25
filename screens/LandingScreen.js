@@ -41,7 +41,7 @@ const LandingScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Create New" onPress={handleCreateNewButtonClick} />
+      <Button title='Create New' onPress={handleCreateNewButtonClick} />
       <TodoList
         onDelete={handleDeleteTodo}
         onToggleCompeleteStatus={handleToggleMarkComplete}
