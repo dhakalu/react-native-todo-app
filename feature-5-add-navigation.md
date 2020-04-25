@@ -9,13 +9,13 @@ This branch contains the code which adds navigation on top of code from `feature
 
 To achieve I will be using the `React Navigation` library. It can be installed using the command below
 
-```
+```bashscript
     npm install @react-navigation/native @react-navigation/stack
 ```
 
 Since my project was based on expo, I used the command below to intsall the dependencies that `react-navigation` needs.
 
-```
+```bash
 expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
@@ -27,4 +27,6 @@ Once the necessary library are installed.
 
 `React Navigation` provides a function [`createBottomTabNavigator`](https://reactnavigation.org/docs/bottom-tab-navigator) which can be used to create the navigation bar at the bottom. Also to show a solid heading we will use [`createStackNavigator`](https://reactnavigation.org/docs/stack-navigator).
 
-    yarn add @react-navigation/bottom-tabs 
+```bash
+yarn add @react-navigation/bottom-tabs 
+```

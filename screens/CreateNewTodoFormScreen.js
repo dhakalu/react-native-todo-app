@@ -1,5 +1,7 @@
 import { View, TextInput, StyleSheet, Button } from 'react-native'
 import React, { useState } from 'react'
+import { mockedActions } from '../data-mockup/actions'
+import SuggestedActions from '../components/SuggestedActions'
 
 const CreateNewTodoFormScreen = (props) => {
   const {
@@ -8,6 +10,8 @@ const CreateNewTodoFormScreen = (props) => {
   } = props
 
   const [titile, setTitle] = useState('')
+
+  const inputRef = React.createRef();
 
   const handleTextChange = (text) => {
     setTitle(text)
@@ -18,16 +22,29 @@ const CreateNewTodoFormScreen = (props) => {
     onCancel()
   }
 
+  const hadleActionSelection = (title) => {
+    setTitle(`${title} `)
+    inputRef.current.focus()
+  }
+
   return (
     <View style={styles.container}>
       <TextInput
         placeholder='Enter the name of your todo here'
         style={styles.textInput}
         value={titile}
+        ref={inputRef}
         onChangeText={handleTextChange}
       />
+      <SuggestedActions
+        onSelectAction={hadleActionSelection}
+        filterText={titile}
+        actions={mockedActions}
+      />
       <View style={styles.buttonGroup}>
-        <Button title='Create' onPress={handleCreate} />
+        <View>
+          <Button title='Create' onPress={handleCreate} />
+        </View>
         <View style={styles.cancelButton}>
           <Button title='Cancel' color='red' backgroundColor='green' onPress={onCancel} />
         </View>

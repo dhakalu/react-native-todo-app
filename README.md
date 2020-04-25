@@ -130,13 +130,13 @@ As the `expo` command above shows, `init` option can be used when we need to cre
 
 I will be using the command below to create a brand new project with `blank` template. I am also using `yarn` as my package manager. And I am naming my project as `react-native-basic-app`
 
-```
+```bash
 expo init --template blank --name react-native-basic-app --yarn
 ```
 
 Once the expo init command completes, I saw a directory named `react-native-basic-app`. If I do `cd react-native-basic-app` and do `ls` I see that `expo init` command created below files and directories.
 
-```
+```bash
 04/23/2020  10:02 PM    <DIR>          .expo-shared
 10/26/1985  03:15 AM               130 .gitignore
 10/26/1985  03:15 AM               403 App.js
@@ -148,5 +148,14 @@ Once the expo init command completes, I saw a directory named `react-native-basi
 04/23/2020  10:04 PM           252,312 yarn.lock
 ```
 
-The firs thing that we need to do.
+## Running Application in Local
 
+To run the application on our device we can download `expo client` application from apple store or playstore.
+
+Since we are using expo we will be using the `start` script that we can pass to `expo` command as shown below. To find more about the options available run `expo start --help`. 
+
+```bash
+expo start
+```
+
+This opens expo dev tool in chrome tab from where we can choose to run it in different ways. The way I use it is by scanning the barcode in the devtool from my own cellphone.
