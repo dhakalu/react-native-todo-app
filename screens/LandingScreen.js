@@ -9,11 +9,8 @@ const LandingScreen = () => {
   const [todos, setTodos] = useState(mockedToDos)
   const [isCreateModalOpen, setCreateModalOpen] = useState(false)
 
-  const handleAddTodo = (title) => {
-    setTodos([{
-      id: Math.random().toString(),
-      title
-    }, ...todos])
+  const handleAddTodo = (newTodo) => {
+    setTodos([{ ...newTodo }, ...todos])
   }
 
   const handleCancel = () => {

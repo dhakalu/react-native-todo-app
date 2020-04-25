@@ -19,7 +19,7 @@ const Todo = (props) => {
     const iconName = done ? 'checkbox-marked-circle' : 'checkbox-blank-circle-outline'
     return (
       <CenteredView>
-        <MaterialCommunityIcons name={iconName} size={12} color='green' />
+        <MaterialCommunityIcons name={iconName} size={16} color='green' />
       </CenteredView>
     )
   }
@@ -40,7 +40,7 @@ const Todo = (props) => {
         </View>
         <TouchableOpacity onPress={() => onDelete(id)}>
           <View style={styles.deleteIcon}>
-            {<MaterialCommunityIcons name='close' size={12} color='red' />}
+            {<MaterialCommunityIcons name='close' size={16} color='red' />}
           </View>
         </TouchableOpacity>
       </View>
