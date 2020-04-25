@@ -5,7 +5,8 @@ import Todo from './Todo'
 const TodoList = (props) => {
   const {
     todos = [],
-    onToggleCompeleteStatus = () => false
+    onToggleCompeleteStatus = () => false,
+    onDelete = () => false
   } = props
 
   return (
@@ -15,6 +16,7 @@ const TodoList = (props) => {
           todos.map(x => {
             return (
               <Todo
+                onDelete={onDelete}
                 onToggleCompeleteStatus={onToggleCompeleteStatus}
                 key={x.id} todo={x}
               />
